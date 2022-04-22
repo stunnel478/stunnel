@@ -18,8 +18,8 @@ echo "Checking VPS"
 clear
 read -rp "Domain/Host : " -e domain
 echo "IP=$domain" >>/var/lib/premium-script/ipvps.conf
-rm -rf /etc/xray/domain
-echo $domain > /etc/xray/domain
+rm -rf /etc/v2ray/domain
+echo $domain > /etc/v2ray/domain
 
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 cd /root/
@@ -30,5 +30,5 @@ cd .acme.sh
 echo "starting...., Port 80 Akan di Hentikan Saat Proses install Cert"
 bash acme.sh --register-account -m senowahyu62@gmail.com
 bash acme.sh --issue --standalone -d $domain --force
-bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
+bash acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key
 restart
