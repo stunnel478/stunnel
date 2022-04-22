@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/stunnel478/stunnel/main/cf.sh && chmod +x
 wget https://raw.githubusercontent.com/stunnel478/stunnel/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 wget https://raw.githubusercontent.com/stunnel478/stunnel/main/sstp.sh && chmod +x sstp.sh && screen -S sstp ./sstp.sh
 #install ssr
-wget hhttps://raw.githubusercontent.com/stunnel478/stunnel/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://raw.githubusercontent.com/stunnel478/stunnel/main/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
 wget https://raw.githubusercontent.com/stunnel478/stunnel/main/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 #installwg
 wget https://raw.githubusercontent.com/stunnel478/stunnel/main/wg.sh && chmod +x wg.sh && screen -S wg ./wg.sh
