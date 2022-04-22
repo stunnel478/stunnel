@@ -21,7 +21,7 @@ commonname=www.vpnstores.net
 email=admin@vpnstores.net
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://linkkalian/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/stunnel478/stunnel/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -88,9 +88,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://linkkalian/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/stunnel478/stunnel/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://linkkalian/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/stunnel478/stunnel/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
@@ -125,7 +125,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://linkkalian/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/stunnel478/stunnel/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -155,7 +155,7 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 443
+accept = 449
 connect = 127.0.0.1:109
 
 [dropbear]
@@ -179,7 +179,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://linkkalian/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+#wget https://raw.githubusercontent.com/stunnel478/stunnel/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -234,36 +234,36 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://linkkalian/add-host.sh"
-wget -O about "https://linkkalian/about.sh"
-wget -O menu "https://linkkalian/menu.sh"
-wget -O usernew "https://linkkalian/usernew.sh"
-wget -O trial "https://linkkalian/trial.sh"
-wget -O hapus "https://linkkalian/hapus.sh"
-wget -O member "https://linkkalian/member.sh"
-wget -O delete "https://linkkalian/delete.sh"
-wget -O cek "https://linkkalian/cek.sh"
-wget -O restart "https://linkkalian/restart.sh"
-wget -O speedtest "https://linkkalian/speedtest_cli.py"
-wget -O info "https://linkkalian/info.sh"
-wget -O ram "https://linkkalian/ram.sh"
-wget -O renew "https://linkkalian/renew.sh"
-wget -O autokill "https://linkkalian/autokill.sh"
-wget -O ceklim "https://linkkalian/ceklim.sh"
-wget -O tendang "https://linkkalian/tendang.sh"
-wget -O clear-log "https://linkkalian/clear-log.sh"
-wget -O change-port "https://linkkalian/change.sh"
-wget -O port-ovpn "https://linkkalian/port-ovpn.sh"
-wget -O port-ssl "https://linkkalian/port-ssl.sh"
-wget -O port-wg "https://linkkalian/port-wg.sh"
-wget -O port-tr "https://linkkalian/port-tr.sh"
-wget -O port-sstp "https://linkkalian/port-sstp.sh"
-wget -O port-squid "https://linkkalian/port-squid.sh"
-wget -O port-ws "https://linkkalian/port-ws.sh"
-wget -O port-vless "https://linkkalian/port-vless.sh"
-wget -O wbmn "https://linkkalian/webmin.sh"
-wget -O xp "https://linkkalian/xp.sh"
-wget -O kernel-updt "https://linkkalian/kernel-update.sh"
+wget -O add-host "https://raw.githubusercontent.com/stunnel478/stunnel/main/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/stunnel478/stunnel/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/stunnel478/stunnel/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/stunnel478/stunnel/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/stunnel478/stunnel/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/stunnel478/stunnel/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/stunnel478/stunnel/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/stunnel478/stunnel/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/stunnel478/stunnel/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/stunnel478/stunnel/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/stunnel478/stunnel/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/stunnel478/stunnel/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/stunnel478/stunnel/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/stunnel478/stunnel/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/stunnel478/stunnel/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/stunnel478/stunnel/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/stunnel478/stunnel/main/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/stunnel478/stunnel/main/clear-log.sh"
+wget -O change-port "https://raw.githubusercontent.com/stunnel478/stunnel/main/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/stunnel478/stunnel/main/port-vless.sh"
+wget -O wbmn "https://raw.githubusercontent.com/stunnel478/stunnel/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/stunnel478/stunnel/main/xp.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/stunnel478/stunnel/main/kernel-update.sh"
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
