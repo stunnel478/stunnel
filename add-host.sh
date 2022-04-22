@@ -17,7 +17,7 @@ echo "Checking VPS"
 
 clear
 read -rp "Domain/Host : " -e domain
-echo "IP=$domain" >>/var/lib/premium-script/ipvps.conf
+#echo "IP=$domain" >>/var/lib/premium-script/ipvps.conf
 rm -rf /etc/v2ray/domain
 echo $domain > /etc/v2ray/domain
 
