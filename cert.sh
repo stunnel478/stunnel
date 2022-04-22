@@ -4,14 +4,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 echo "Checking VPS"
-IZIN=$( curl http://vip-sg1.myvpskuy.xyz:81/BskaoahdmsoahamoaJNlapabsmal | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo "Only For Premium Users"
-exit 0
-fi
+
 clear
 echo start
 sleep 0.5
@@ -19,11 +12,17 @@ source /var/lib/premium-script/ipvps.conf
 domain=$IP
 systemctl stop v2ray
 systemctl stop v2ray@none
-/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
-~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
-systemctl start v2ray
-systemctl start v2ray@none
-echo Done
+domain=$(cat /etc/vray/domain)
+sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+cd /root/
+wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
+bash acme.sh --install
+rm acme.sh
+cd .acme.sh
+echo "starting...., Port 80 Akan di Hentikan Saat Proses install Cert"
+bash acme.sh --register-account -m kimochilol@gmail.com
+bash acme.sh --issue --standalone -d $domain --force
+bash acme.sh --installcert -d $domain --fullchainpath /etc/vray/vray.crt --keypath /etc/vray/vray.key
 sleep 0.5
 clear 
 neofetch
