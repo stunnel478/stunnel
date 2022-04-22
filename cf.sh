@@ -4,20 +4,13 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 echo "Checking VPS"
-IZIN=$( curl http://vip-sg1.myvpskuy.xyz:81/BskaoahdmsoahamoaJNlapabsmal | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo "Only For Premium Users"
-exit 0
-fi
+
 apt install jq curl -y
-DOMAIN=domain kalian
+DOMAIN=sshcf.xyz
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.domain kalian
-CF_ID=emailkalian@gmail.com
-CF_KEY=d7646d2edd8f564e0da635c6b8b71c5fba0e2
+SUB_DOMAIN=${sub}.sshcf.xyz
+CF_ID=baxiamania@gmail.com
+CF_KEY=e790e6961a311853568fbccd227e043533482
 set -euo pipefail
 IP=$(wget -qO- icanhazip.com);
 echo "Updating DNS for ${SUB_DOMAIN}..."
